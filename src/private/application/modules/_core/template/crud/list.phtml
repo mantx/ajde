@@ -56,7 +56,7 @@ if (isset($listOptions['show'])) {
 			<th class="buttons">
 				<?php if ($crud->getOption('list.search', true)) { ?>
 					<input type="search" name="view[search]" class="search" value="<?php echo $crudView->getSearch(); ?>" placeholder="<?php echo __("Search"); ?>"/>
-					<a href="javascript:void(null);" class='button search'>Go</a>
+					<a href="javascript:void(null);" class=''>FIND</a>
 				<?php } ?>
 			</th>
 		</tr>
@@ -64,10 +64,10 @@ if (isset($listOptions['show'])) {
 			<td><input type="checkbox" class="toggleSelect" /></td>
 			<td class="toolbar" colspan="<?php echo $columnCount + 1; ?>">
 				<?php if ($crud->getOption('list.buttons.new', true)) { ?>
-					<a href="javascript:void(null);" class='button new'>new</a>
+					<a href="javascript:void(null);" class='button new group'>new</a>
 				<?php } ?>
 				<?php if ($crud->getOption('list.buttons.delete', true)) { ?>
-					<a href="javascript:void(null);" class='button delete multiple'>delete selected</a>
+					<a href="javascript:void(null);" class='button delete group multiple'>delete selected</a>
 				<?php } ?>
 			</td>
 		</tr>
@@ -122,7 +122,8 @@ if (isset($listOptions['show'])) {
 								'filename' => $field->getSaveDir() . $value,
 								'width' => $crud->getOption('list.thumbDim.width', 75),
 								'height' => $crud->getOption('list.thumbDim.height', 75),
-								'crop' => true
+								'crop' => true,
+								'class' => 'preview'
 							));
 							//echo ' ' . $this->escape($value);
 						} else {
@@ -143,15 +144,15 @@ if (isset($listOptions['show'])) {
 			<?php } ?>
 			<td class='buttons'>
 				<?php if ($crud->getOption('list.buttons.edit', true)) { ?>
-					<a href="javascript:void(null);" class='button edit'>edit</a>
+					<a href="javascript:void(null);" class='button edit group'>edit</a>
 				<?php } ?>
 				<?php if ($crud->getOption('list.buttons.delete', true)) { ?>
-					<a href="javascript:void(null);" class='button delete'>delete</a>
+					<a href="javascript:void(null);" class='button delete group'>delete</a>
 				<?php } ?>
 				<?php if ($buttons = $crud->getOption('list.buttons')) {
 					foreach($buttons as $button) {
 						if (is_array($button)) { ?>
-							<a href="javascript:void(null);" class='button <?php echo $button['class']; ?>'><?php echo $button['text']; ?></a>
+							<a href="javascript:void(null);" class='button group <?php echo $button['class']; ?>'><?php echo $button['text']; ?></a>
 						<?php } 
 					}
 				}

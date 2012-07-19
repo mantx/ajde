@@ -3,18 +3,16 @@ div.crudLayout div.row {
 }
 
 div.crudLayout dl.crudEdit {
-	margin: 5px 5px 10px 5px;
-	padding: 0 10px 0 0;
+	padding: 10px;
+	margin-right: 20px;
+	background-color: @light;
 }
 
 div.crudLayout dl.crudEdit.toolbar {
-	padding-right: 0;
 }
 
 div.crudLayout dl.crudEdit.sidebar {
-	border: 2px solid #eee;	
-	background-color: #F7F7F7;
-	padding: 0 10px;
+	background-color: @silver;
 }
 
 div.crudLayout dl.crudEdit dt {
@@ -23,12 +21,23 @@ div.crudLayout dl.crudEdit dt {
 	clear: both;
 	overflow: hidden;	
 	width: auto;
-	min-height: available;
+	min-height: 0;
 	
 	text-align: left;
 	padding: 10px 0 0 0;
 	margin: 0;
 	font-weight: bold;
+}
+
+div.crudLayout dl.crudEdit dt[title] {
+	background-color: @lightblue;
+	color: @blue;
+	display: inline-block;
+	padding: 5px 10px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	font-weight: normal;
 }
 
 div.crudLayout dl.crudEdit.table dt {
@@ -38,17 +47,18 @@ div.crudLayout dl.crudEdit.table dt {
 	clear: left;
 	overflow: hidden;	
 	width: 150px;
-	padding: 8px 10px 0 0;
 }
 
 div.crudLayout dl.crudEdit dt.title {
-	font-size: 1.5em;
-	font-weight: normal;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: @gray;
 	width: auto;
 }
 
 div.crudLayout dl.crudEdit dt.required {
-	color: #e43c3c;
 	font-weight: bold;
 }
 
@@ -64,7 +74,7 @@ div.crudLayout dl.crudEdit dd {
 
 div.crudLayout dl.crudEdit.table dd {
 	float: left;
-	padding: 6px 0 0 0;
+	margin-left: 10px;
 }
 
 div.crudLayout dl.crudEdit dd input[type=text] {
@@ -73,6 +83,15 @@ div.crudLayout dl.crudEdit dd input[type=text] {
 
 div.crudLayout dl.crudEdit dd textarea {
 	width: 100%;
+}
+
+div.crudLayout dl.crudEdit.sidebar dd span.help {
+	background-color: @light;
+}
+
+div.crudLayout dl.crudEdit.sidebar .button,
+div.crudLayout dl.crudEdit.sidebar .qq-upload-button {
+	border: 1px solid @em;
 }
 
 div.crudLayout dl.crudEdit.table dd span.help {

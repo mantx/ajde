@@ -3,7 +3,13 @@
  * Example styles for advanced layout
  */
  
-@blue: #005F9B;
+@blue: #2891ba;
+@lightblue: #c0edff;
+
+@light: #f7f7f7;
+@silver: #d6d6d6;
+@em: #adadad;
+@gray: #555;
 
 /* clear syntax hightlighting errors in netbeans */
 body {}
@@ -23,12 +29,20 @@ h1 {
 }
 
 h2 {
-	font-size: 3em;
-	margin-bottom: 0.3em;
+	background-color: @light;
+	color: @gray;
+	display: inline-block;
+	font-size: 2em;
+	padding: 5px 10px;
+	margin-bottom: 0.5em;
 }
 
 h3 {
-	font-size: 2em;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: @gray;
 }
 
 h4 {
@@ -42,12 +56,11 @@ p,ul,ol {
 
 a, a:active, a:visited {
 	text-decoration: none;
-	color: #005F9B;
-	border-bottom: 2px solid #e0e0e0;
+	color: @blue;
 }
 
 a:hover {
-	border-color: #8acaf3;
+	color: @gray;
 }
 
 ::-moz-selection{ background: #9b0092; color:#fff; text-shadow: none; }
@@ -101,8 +114,7 @@ header {
 	padding: 20px 0;
 	margin-bottom: 20px;
 	color: @blue;
-	background-color: #f7f7f7;
-	border-bottom: 1px dashed #8acaf3;	
+	background-color: @light;
 }
 
 header h4 {
@@ -135,19 +147,28 @@ nav ul {
 }
 
 nav li {
-	height: 2em;
 }
 
 nav a, nav a:active, nav a:visited {
-	font-size: 1.2em;
-	font-weight: 700;
+	display: inline-block;
+	background-color: @silver;
+	font-size: 1.1em;
+	font-weight: 400;
 	text-decoration: none;
-	color: #9b0092;
-	border-bottom: 2px solid #f590ef;	
+	text-transform: uppercase;
+	
+	color: @gray;
+	
+	border: none;
+	
+	padding: 2px 7px;
+	margin-bottom: 5px;	
 }
 
 nav a:hover {
-	border-color: #9b0092;
+	border: none;
+	background-color: @gray;
+	color: @silver;
 }
 
 

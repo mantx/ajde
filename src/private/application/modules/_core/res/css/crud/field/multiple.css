@@ -6,6 +6,10 @@ table.multipleList {
 	width: 100%;
 }
 
+table.multipleList th {
+	padding-left: 5px !important;
+}
+
 table.multipleList tr.template {
 	display: none;
 }

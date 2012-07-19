@@ -1,75 +1,92 @@
-.button,
-.qq-upload-button {
-	display: inline-block;
-	height: 14px;
-	
-	padding: 5px 10px 3px 25px;	
-	margin-right: 5px;
-		
+/*#!less*/
+
+@blue: #2891ba;
+@lightblue: #c0edff;
+
+@light: #f7f7f7;
+@silver: #d6d6d6;
+@em: #adadad;
+@gray: #555;
+
+
+
+.button-text {
 	text-transform: uppercase;
 	text-decoration: none;
 	
 	font-size: 0.8em;
 	font-weight: bold;
+}
+
+.button,
+dl.crudEdit .qq-upload-button {
+	.button-text;
 	
-	white-space:nowrap;	
+	display: inline-block;
+	height: 14px;
 	
-	border: 1px solid silver;
+	padding: 7px 12px 5px 29px;	
+	margin-right: 0px;
 	
-	color: black;
+	white-space: nowrap;
 	
 	background-color: white;
 	background-repeat: no-repeat;
-	background-position: 5px center;
+	background-position: 6px center;
 	
-  -webkit-border-radius: 3px; 
-     -moz-border-radius: 3px; 
-          border-radius: 3px; 
-   -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+	background-color: @silver;
+	border: none;
+	border-bottom: 3px solid @em;
+	
+	color: @gray !important;
+}
+
+.button.group {
+	float: left;
 }
 
 button.button {
-	height: 24px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	height: 29px;
 	position: relative;
 	top: 1px;
 }
 
 .button:hover, .button:focus,
-.qq-upload-button:hover, .qq-upload-button:focus {
-	color: black;
-	
-  -webkit-box-shadow: 0px 0px 4px silver; 
-     -moz-box-shadow: 0px 0px 4px silver; 
-          box-shadow: 0px 0px 4px silver;
-		  
-	border: 1px solid gray !important;
-	background-color: #eee;
+dl.crudEdit .qq-upload-button:hover, dl.crudEdit .qq-upload-button:focus {	
+	color: @light !important;
+	border-bottom: 3px solid @blue;
+	background-color: @em;
 }
 
 .button.icon-right {
-	padding: 5px 25px 3px 10px;	
+	padding: 7px 29px 5px 12px;	
 	background-position: right center;
 }
 
-.button.delete	{ border: 1px solid #e94615; }
-.button.save	{ border: 1px solid #6fbe15; }
-
-.button.save	{ background-image: url('../../public/images/icons/16/check_2.png'); }
-.button.apply	{ background-image: url('../../public/images/icons/16/save_diskette_floppy_disk.png'); }
-.button.new		{ background-image: url('../../public/images/icons/16/plus.png'); }
-.button.add		{ background-image: url('../../public/images/icons/16/opened.png'); }
-.button.edit	{ background-image: url('../../public/images/icons/16/pencil_edit.png'); }
-.button.cancel	{ background-image: url('../../public/images/icons/16/stop_2.png'); }
-.button.delete	{ background-image: url('../../public/images/icons/16/close_delete_2.png'); }
+.button.save	{ background-image: url('../../public/images/icons-gray/16/check_2.png'); }
+.button.apply	{ background-image: url('../../public/images/icons-gray/16/save_diskette_floppy_disk.png'); }
+.button.new		{ background-image: url('../../public/images/icons-gray/16/plus.png'); }
+.button.add		{ background-image: url('../../public/images/icons-gray/16/opened.png'); }
+.button.edit	{ background-image: url('../../public/images/icons-gray/16/pencil_edit.png'); }
+.button.cancel	{ background-image: url('../../public/images/icons-gray/16/stop_2.png'); }
+.button.delete	{ background-image: url('../../public/images/icons-gray/16/close_delete_2.png'); }
 .button.prev	{ background-image: url('../../public/images/_core/crud/prev_16.png'); }
 .button.next	{ background-image: url('../../public/images/_core/crud/next_21.png'); }
-.button.search	{ background-image: url('../../public/images/icons/16/search_lense.png'); }
-.button.view	{ background-image: url('../../public/images/icons/16/computer_monitor.png'); }
+.button.search	{ background-image: url('../../public/images/icons-gray/16/search_lense.png'); }
+.button.view	{ background-image: url('../../public/images/icons-gray/16/computer_monitor.png'); }
 .button.next.icon-right	{ background-image: url('../../public/images/_core/crud/next_21.png'); }
 
 .button.delete:hover, .button.delete:focus {
 	background-color: #e94615;
-	color: white;
+	color: white !important;
+}
+
+.button.save:hover, .button.save:focus {
+	background-color: #6bc946;
+	color: white !important;
 }
 
 .button.cancel {
@@ -77,17 +94,13 @@ button.button {
 }
 
 .button[disabled], .button.disabled {
-	border: 1px solid silver !important;
 	background-color: #eee;
 	background-image: inherit !important;
-	color: silver;
+	border-color: @silver;
+	color: @silver !important;
 }
 .button[disabled]:hover, .button.disabled:hover {
-	color: silver;
-	border: 1px solid silver !important;
-  -webkit-box-shadow: 0 0 0 transparent; 
-     -moz-box-shadow: 0 0 0 transparent; 
-          box-shadow: 0 0 0 transparent; 
+	color: @silver !important;
 }
 
 option[disabled] {

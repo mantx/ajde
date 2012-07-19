@@ -47,9 +47,9 @@
 		$browser.slideToggle(function() {
 			$(this).trigger('scroll');
 			if ($(that).parents('.block.sidebar').length && $browser.is(':visible')) {
-				$(that).parent().css({height: '550px'});
+//				$(that).parent().css({height: '550px'});
 			} else if ($(that).parents('.block.sidebar').length) {
-				$(that).parent().css({height: 'auto'});
+//				$(that).parent().css({height: 'auto'});
 			}
 		});		
 	});

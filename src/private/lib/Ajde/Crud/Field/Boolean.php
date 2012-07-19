@@ -14,8 +14,8 @@ class Ajde_Crud_Field_Boolean extends Ajde_Crud_Field
 	{
 		$value = issetor($value, $this->hasValue() ? $this->getValue() : false);
 		return $value ?
-			" <img src='public/images/icons/16/flag_mark_green.png' style='vertical-align: middle;' title='True' />" :
-			" <img src='public/images/icons/16/flag_mark_red.png' style='vertical-align: middle;' title='False' />";
+			" <img src='public/images/icons-gray/16/flag_mark_green.png' style='vertical-align: middle;' title='True' />" :
+			" <img src='public/images/icons-gray/16/flag_mark_red.png' style='vertical-align: middle;' title='False' />";
 			
 	}
 }
