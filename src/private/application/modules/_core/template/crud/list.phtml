@@ -170,11 +170,11 @@ if (isset($listOptions['show'])) {
 	<?php } ?>
 	</tbody>
 	<tfoot>
-		<tr class="toolbar">
-			<td></td>			
+		<tr class="toolbar">	
+			<td></td>
 			<td class='buttons' colspan="<?php echo $columnCount; ?>">				
 				<input type="hidden" name="view[page]" value="<?php echo $crudView->getPage(); ?>" />
-				<a href="javascript:void(null);" class='button prev <?php if ($crudView->getPage() == 1) { echo 'disabled'; } ?>'>Previous</a>
+				<a href="javascript:void(null);" class='button prev group <?php if ($crudView->getPage() == 1) { echo 'disabled'; } ?>'>Previous</a>
 				<a href="javascript:void(null);" class='button next <?php if ($crudView->getPage() >= ($pageCount = $crudView->getPageCount($crud->getCollection())) ) { echo 'disabled'; } ?> icon-right'>Next</a>
 				<span>
 					<?php echo sprintf(__('Page %s of %s'), 

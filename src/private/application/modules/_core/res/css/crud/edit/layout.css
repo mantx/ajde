@@ -31,8 +31,8 @@ div.crudLayout dl.crudEdit dt {
 }
 
 div.crudLayout dl.crudEdit dt[title] {
-	background-color: @lightblue;
-	color: @blue;
+	background-color: @blue;
+	color: @light;
 	display: inline-block;
 	padding: 5px 10px;
 	margin-bottom: 5px;
@@ -51,12 +51,21 @@ div.crudLayout dl.crudEdit.table dt {
 }
 
 div.crudLayout dl.crudEdit dt.title {
+	display: block;
+	text-align: left;
+	float: none;
+
 	font-size: 1.3em;
 	text-transform: uppercase;
 	font-weight: bold;
-	margin-bottom: 10px;
-	color: @gray;
+	margin-bottom: 20px;
+	background-color: @em;
+	color: @light;
 	width: auto;
+	margin: 0 -10px;
+	padding: 10px;
+	position: relative;
+	top: -10px;
 }
 
 div.crudLayout dl.crudEdit dt.required {
