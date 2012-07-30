@@ -1,14 +1,7 @@
-/**
- * Main JS application
- */
-
 ;
-(function($) {
+$(document).ready(function() {
 	
-	var bootstrap = function() {		
-		// ...
-	};
-
-	$(document).ready(bootstrap);
-
-})(jQuery);
+	// Bootstrap application
+	Application.bootstrap();
+		
+});

@@ -3,7 +3,7 @@
 class SampleController extends Ajde_Acl_Controller
 {
 	protected $_allowedActions = array(
-		'view',
+		'view', 'ajax'
 	);
 	
 	public function beforeInvoke()
@@ -36,6 +36,23 @@ class SampleController extends Ajde_Acl_Controller
 		Ajde_Model::register($this);
 		return $this->render();
 	}
+	
+	public function ajax()
+	{
+		return $this->view();
+	}
+	
+	public function item()
+    {
+    	Ajde_Model::register($this);		
+		$sample = new SampleModel();
+		$sample->loadByPK($this->getId());	
+		if (!$sample->hasLoaded()) {
+			Ajde_Http_Response::redirectNotFound();
+		}
+		$this->getView()->assign('sample', $sample);
+        return $this->render();
+    }
 	
 	public function distributor()
 	{

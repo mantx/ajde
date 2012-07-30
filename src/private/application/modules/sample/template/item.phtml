@@ -1,0 +1,39 @@
+<?php
+/* @var $this Ajde_Template_Parser_Phtml_Helper */
+?>
+
+
+<h3>
+	<?php echo $this->escape( $this->sample->title ); ?>
+</h3>
+
+<hr/>
+	<?php if ($this->sample->hasNotEmpty('image')) { ?>
+		<?php echo $this->ACImage(array(
+			'filename' => 'public/images/uploads/' . $this->sample->getImage(),
+			'width' => 200,
+			'height' => 200,
+			'crop' => true,
+			'class' => 'right'
+		)); ?>
+	<?php } ?>		
+	<p>
+		<?php echo _c( $this->sample->content ); ?>
+	</p>
+	<p>
+		€ <?php echo money_format('%!i', $this->sample->getUnitprice() * (1+$this->sample->getVATPercentage())); ?>
+	</p>
+	<p>
+		<?php echo $this->includeModule('shop/cart:add/html/sample:' . $this->sample); ?>
+	</p>
+	<p>
+		<em>Updated: <?php echo $this->escape( $this->sample->updated ); ?></em>
+	</p>		
+	<div class='clearfix'></div>
+<hr/>
+
+<a href='sample/item/<?php echo $this->sample->getPK() + 1; ?>.html' rel='ajax'>next</a>
+
+<a href='sample/ajax.html' rel='close'>close</a>
+
+<a rel='back'>back</a>

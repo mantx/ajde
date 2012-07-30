@@ -17,6 +17,12 @@ $this->requireJsFirst('i18n.' . Ajde_Lang::getInstance()->getShortLang());
 // Alert bar
 $this->requireJsFirst('core.alert'); $this->requireCssFirst('core.alert');
 
+// Javascript application
+$this->requireJsFirst('application');
+$this->requireJsFirst('application.client');
+$this->requireJsFirst('application.navigation');
+$this->requireJsFirst('application.ui');
+
 // Example styles
 $this->requireCssTop('core.1140');
 $this->requireGWebFont('Dosis', array(400, 700));
@@ -90,6 +96,7 @@ $this->requireCss('default.mobile', 'html', null, Ajde_Document_Format_Html::RES
 					<ul>
 						<li><a href='.'>Home</a></li>
 						<li><a href='sample'>Items</a></li>
+						<li><a href='sample/ajax'>Ajax loading</a></li>
 						<li><a href='shop/cart:edit'>Cart</a></li>
 						<li><a href='user'>User</a></li>
 					</ul>

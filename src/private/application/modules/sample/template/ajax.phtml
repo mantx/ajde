@@ -1,0 +1,41 @@
+<?php
+/* @var $this Ajde_Template_Parser_Phtml_Helper */
+$this->requireCss('view.mobile', 'html', null, Ajde_Document_Format_Html::RESOURCE_POSITION_LAST, 'media="only screen and (max-width: 767px)"');
+?>
+
+<div class="eightcol">
+	
+	<h2>Ajax loading</h2>
+	<p>
+		<a class='action' rel='ajax' href='sample/edit.html'>Edit items</a>
+	</p>
+	<hr/>
+
+	<?php foreach($this->samples as $entry) {
+		/* @var $entry Ajde_Model */ ?>
+		<h3>
+			<a href='sample/item/<?php echo $entry->getPK(); ?>.html' rel='ajax'>
+				<?php echo $this->escape( $entry->title ); ?>
+			<?php if ($entry->hasNotEmpty('image')) { ?>
+				<?php echo $this->ACImage(array(
+					'filename' => 'public/images/uploads/' . $entry->getImage(),
+					'width' => 200,
+					'height' => 50,
+					'crop' => true,
+					'class' => 'right'
+				)); ?>			
+			<?php } ?>
+			</a>
+		</h3>
+		<div class='clearfix'></div>
+		<hr/>
+	<?php } ?>
+
+</div>
+
+<aside class="fourcol last">
+	<h2>My cart</h2>
+	<div id='widget'>
+		<?php echo $this->includeModule('shop/cart:widget/html/quickcheckout'); ?>
+	</div>
+</aside>
