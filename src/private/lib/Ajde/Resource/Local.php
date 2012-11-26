@@ -115,6 +115,21 @@ class Ajde_Resource_Local extends Ajde_Resource
 
 	protected function getLinkUrl()
 	{
+		return $this->getPublicLinkUrl();
+	}
+	
+	private function getPublicLinkUrl()
+	{
+		$base = PUBLIC_DIR . 'asset/';
+		
+		//$url = $base . $this->getType() . '/' . str_replace('private/application/', '', $this->getFilename());
+		$url = $base . str_replace('private/application/', '', $this->getFilename()) . '?' . filemtime( $this->getFilename() );
+		
+		return $url;
+	}
+	
+	private function getFingerprintedLinkUrl()
+	{
 		$base = '_core/component:resourceLocal';
 		if (Config::get('debug') === true) {
 			$url = $base . '.' . $this->getType() . '?' . str_replace('%2F', ':', urlencode(str_replace('private/application/', '', $this->getFilename())));
